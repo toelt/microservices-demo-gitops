@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/toelt/webservices-demo-helm-charts.git
     targetRevision: HEAD
-    path: guestbook
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: sock-shop
