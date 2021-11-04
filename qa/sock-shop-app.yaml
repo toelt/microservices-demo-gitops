@@ -4,11 +4,11 @@ metadata:
   name: sock-shop
   namespace: argocd
 spec:
-  project: default
+  project: sock-shop
   source:
-    repoURL: https://github.com/toelt/webservices-demo-helm-charts.git
+    repoURL: git@github.com:toelt/webservices-demo-gitops.git
     targetRevision: HEAD
-    path: .
+    path: qa
   destination:
     server: https://kubernetes.default.svc
     namespace: sock-shop
