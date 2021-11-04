@@ -6,9 +6,9 @@ metadata:
 spec:
   project: sock-shop
   source:
-    repoURL: git@github.com:toelt/webservices-demo-gitops.git
+    repoURL: git@github.com:toelt/webservices-demo-helm-charts.git
     targetRevision: HEAD
-    path: qa
+    path: helm-charts
   destination:
     server: https://kubernetes.default.svc
     namespace: sock-shop
