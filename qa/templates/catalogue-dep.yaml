@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: {{if .Values.global.registry}}{{ .Values.global.registry }}/{{end}}{{ .Values.catalogue.image.repo }}:{{ .Values.catalogue.image.tag }}
+        image: {{ .Values.catalogue.image.repo }}:{{ .Values.catalogue.image.tag }}
         command: ["/app"]
         args:
         - -port={{ .Values.catalogue.containerPort }}
