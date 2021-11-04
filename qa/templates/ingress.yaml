@@ -17,14 +17,3 @@ spec:
               number: 80
         path: /
         pathType: Prefix
-    {{- if .Values.host }}
-    host: {{ template "host" . }}
-    {{- end }}
-  {{- if .Values.ingress.tlsSecretName }}
-  tls:
-  - secretName: {{ .Values.ingress.tlsSecretName }}
-    {{- if .Values.host }}
-    hosts:
-    - {{ template "host" . }}
-    {{- end }}
-  {{- end }}
