@@ -4,7 +4,7 @@ metadata:
   name: sock-shop
   namespace: argocd
 spec:
-  project: sock-shop
+  project: sock-shop-qa
   source:
     repoURL: https://github.com/toelt/webservices-demo-helm-charts.git
     targetRevision: HEAD
