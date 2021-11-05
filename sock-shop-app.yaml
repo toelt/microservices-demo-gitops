@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sock-shop
+spec:
+  destination:
+    name: ''
+    namespace: sock-shop
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: qa
+    repoURL: 'git@github.com:toelt/microservices-demo-gitops.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  project: sock-shop
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
