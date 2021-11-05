@@ -28,7 +28,7 @@ cartsdb:
 carts:
     image:
         repo: weaveworksdemos/carts
-        tag: 0.4.8
+        tag: latest
     containerPort: 80
     resources:
         limits:
