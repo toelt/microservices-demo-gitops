@@ -1,21 +1,17 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sock-shop
+  name: guestbook
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: ''
-    namespace: sock-shop
-    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+    server: {{ .Values.spec.destination.server }}
+  project: default
   source:
-    path: qa
-    repoURL: 'git@github.com:toelt/microservices-demo-gitops.git'
+    path: guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-  project: sock-shop
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
