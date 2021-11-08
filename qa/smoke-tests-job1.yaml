@@ -1,16 +1,29 @@
+---
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: AppProject
 metadata:
-  name: sock-shop
+  name: machine-learning-platform
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: qa
-    repoURL: https://github.com/toelt/microservices-demo-gitops
-    targetRevision: HEAD
+  description: Project for MLP applications managed by the MLP team
+  sourceRepos:
+    - "*"
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: "redacted"
+    - server: https://kubernetes.default.svc
+      namespace: "argocd"
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  roles:
+    - description: MLP Project role for Admins
+      name: admin
+      policies:
+        - p, proj:machine-learning-platform:admin, applications, *, machine-learning-platform/*, allow
+      groups:
+        - redacted
+    - description: MLP Project role for CICD
+      name: jenkins
+      policies:
+        - p, proj:machine-learning-platform:jenkins, applications, *, machine-learning-platform/*, allow
