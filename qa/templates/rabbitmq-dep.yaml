@@ -7,7 +7,6 @@ metadata:
     name: rabbitmq
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: rabbitmq

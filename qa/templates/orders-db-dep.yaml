@@ -7,7 +7,6 @@ metadata:
     name: orders-db
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: orders-db

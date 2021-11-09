@@ -7,7 +7,6 @@ metadata:
     name: carts
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: carts

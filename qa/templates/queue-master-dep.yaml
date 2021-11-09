@@ -7,7 +7,6 @@ metadata:
     name: queue-master
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: queue-master

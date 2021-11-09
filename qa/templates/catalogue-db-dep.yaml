@@ -7,7 +7,6 @@ metadata:
     name: catalogue-db
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: catalogue-db

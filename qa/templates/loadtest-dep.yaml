@@ -7,7 +7,6 @@ metadata:
     name: load-test
 spec:
   replicas: {{ .Values.loadtest.replicas }}
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: load-test
