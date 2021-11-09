@@ -5,6 +5,7 @@ metadata:
   name: front-end
 spec:
   replicas: {{ .Values.frontend.replicas }}
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: front-end

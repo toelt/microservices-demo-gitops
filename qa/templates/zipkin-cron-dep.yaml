@@ -7,6 +7,7 @@ metadata:
     name: zipkin-cron
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       name: zipkin-cron
