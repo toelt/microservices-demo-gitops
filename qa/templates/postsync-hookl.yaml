@@ -10,8 +10,8 @@ spec:
   template:
     spec:
       containers:
-        - name: e2e-tests
-          image: eu.gcr.io/argo-prototype-1/e2e-tests:master
-          command: ["run"]
+        - name: sleep
+          image: alpine:latest
+          command: ["sleep", "30"]
       restartPolicy: Never
   backoffLimit: 0
